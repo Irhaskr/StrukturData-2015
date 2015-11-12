@@ -1,0 +1,1 @@
+masukanBuffer = new BufferetdinputStream(masukan
