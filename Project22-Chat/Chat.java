@@ -10,14 +10,14 @@ import java.io.InputStream;
 import java.io.BufferedInputStream;
 
 public class Chat {    
-    public void whois(String namaDomain) 
+    public void whois(String pesan) 
                 throws UnknownHostException, IOException {
                     String nama= "M.Irhas(1408107010031)";
         // 0. Buka socket
         koneksi = new Socket("192.168.43.139", 33333);
 
         // Kirim perintah untuk informasi namaDomain
-        kirimPerintah(namaDomain);
+        kirimPesan(pesan);
         
         // Baca balasannya
         bacaBalasan();
@@ -26,13 +26,13 @@ public class Chat {
         koneksi.close();
     }
     
-    public void kirimPerintah(String namaDomain) throws IOException {
+    public void kirimPesan(String namaDomain) throws IOException {
         // 1 & 2. Minta socket untuk ditulis dan Langsung dibuka
         OutputStream keluaran = koneksi.getOutputStream();
         // Note: Karena protokol-nya berbasis teks pakai writer aja.
         Writer keluaranWriter = new OutputStreamWriter(keluaran); 
         // 3. Selagi ada data kirim
-        keluaranWriter.write(namaDomain);
+        keluaranWriter.write(pesan);
         // Syarat protokol-nya, semua perintah diakhiri dengan: CR & LF
         keluaranWriter.write("\r\n"); 
         keluaranWriter.flush(); // Paksa kirim data yang belum terkirim
@@ -47,8 +47,11 @@ public class Chat {
         int data = masukanBuffer.read();
         while (data != -1) {
             System.out.write((char) data);
+            balasan = balasan + Character.toUpperCase((char)data);
             data = masukanBuffer.read();
         }
+        System.out.println("Pesan: "+balasan);
+        kirimPesan(balasan);
     }
     
     private Socket koneksi = null;
