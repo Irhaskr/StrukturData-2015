@@ -19,7 +19,7 @@ public class Client {
     
     public void chat() 
                 throws UnknownHostException, IOException {
-        Socket koneksi = new Socket("google.co.id",80);
+        Socket koneksi = new Socket("unsyiah.ac.id",80);
         try {         
             // Tulis ke socket
             Writer keluaranWriter = new OutputStreamWriter(koneksi.getOutputStream()); 
