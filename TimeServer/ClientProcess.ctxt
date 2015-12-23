@@ -4,5 +4,5 @@ comment0.target=ClientProcess(java.net.Socket)
 comment1.params=
 comment1.target=void\ run()
 comment2.params=
-comment2.target=void\ tangani()
+comment2.target=void\ proses()
 numComments=3
