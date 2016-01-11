@@ -14,7 +14,7 @@ import java.io.OutputStreamWriter;
 import java.io.BufferedWriter;
 
 public class ProcessClientThread implements Runnable {
-    private String JUMLAH="JUMLAH";
+    private String JUMLAH="INFO";
     private String TAMBAH="TAMBAH";
     private String KURANG="KURANG";
     private String SELESAI="SELESAI";

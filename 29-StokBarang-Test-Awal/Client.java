@@ -23,7 +23,7 @@ public class Client {
         try {
              for(;;){
             Scanner keyboard = new Scanner(System.in);
-            System.out.print("Pesan: ");
+            System.out.print("Langkah: ");
             String ketikanSatuBaris = keyboard.nextLine();
                     
             // Tulis ke socket
